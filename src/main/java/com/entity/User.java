@@ -1,5 +1,6 @@
 package com.entity;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -11,6 +12,8 @@ public class User implements Serializable {
     private String username;
     private String password;
     private Integer type;
+    @TableLogic
+    private Integer isDeleted;
 
 
 }
