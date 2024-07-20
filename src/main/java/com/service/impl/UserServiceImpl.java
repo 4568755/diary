@@ -19,7 +19,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public List<User> selectPage(Integer pageSize, Integer page, String username) {
         Page<User> userPage = new Page<>(page,pageSize);
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.like(username!=null,User::getUsername,username);
+        queryWrapper.like(username!=null,User::getUserName,username);
         Page<User> selectPage = userMapper.selectPage(userPage, queryWrapper);
 
         return selectPage.getRecords();
